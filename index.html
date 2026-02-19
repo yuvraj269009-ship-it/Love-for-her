@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For My Cupcake ❤️</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: #000;
+  font-family: Arial, sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+h1 {
+  margin-top: 30px;
+  font-size: 32px;
+  color: #ff6b81;
+}
+
+img {
+  width: 80%;
+  max-width: 400px;
+  margin: 15px auto;
+  border-radius: 20px;
+  box-shadow: 0 0 20px black;
+}
+
+button {
+  padding: 15px 25px;
+  font-size: 20px;
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.popup {
+  display: none;
+  font-size: 24px;
+  margin-top: 25px;
+  color: #ffb3c1;
+}
+
+.heart {
+  position: absolute;
+  color: #ff4d6d;
+  font-size: 25px;
+  animation: float 5s linear infinite;
+}
+
+@keyframes float {
+  0% {transform: translateY(100vh); opacity: 1;}
+  100% {transform: translateY(-10vh); opacity: 0;}
+}
+</style>
+</head>
+
+<body>
+
+<h1>Love You So Much ❤️</h1>
+
+<img src="https://ibb.co/zhgsV0K1" alt="Cupcake Photo">
+
+<p>Every moment with you feels like magic... Forever yours. 💕</p>
+
+<button onclick="showSurprise()">Click Me 💖</button>
+
+<div class="popup" id="popup">
+  You are my today, my tomorrow, and my forever ❤️<br><br>
+  Loveee you Cupcake 😘
+</div>
+
+<script>
+function showSurprise() {
+  document.getElementById("popup").style.display = "block";
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * window.innerWidth + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}
+
+setInterval(createHeart, 200);
+</script>
+
+</body>
+</html>
